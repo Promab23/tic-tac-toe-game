@@ -21,7 +21,7 @@ function initTicTacToe() {
   let currentPlayer = 'X';
   let cells = Array(9).fill('');
   board.innerHTML = '';
-  message.textContent = "Player X's turn (You)";
+  message.textContent = "Your Turn -> X";
 
   function checkWin() {
     const wins = [
@@ -48,7 +48,7 @@ function initTicTacToe() {
 
     const winner = checkWin();
     if (winner) {
-      message.textContent = "Abir (O) wins!";
+      message.textContent = "Ai (O) won!";
       sounds.win.play();
       disableBoard();
       return;
@@ -60,7 +60,7 @@ function initTicTacToe() {
     }
 
     currentPlayer = 'X';
-    message.textContent = "Your Turn";
+    message.textContent = "Your Turn -> X";
   }
 
   function disableBoard() {
@@ -78,7 +78,7 @@ function initTicTacToe() {
   function resetGame() {
     cells.fill('');
     board.innerHTML = '';
-    message.textContent = "Your Turn";
+    message.textContent = "Your Turn -> X";
     currentPlayer = 'X';
     enableBoard();
     setupCells();
@@ -107,7 +107,7 @@ function initTicTacToe() {
             return;
           }
           currentPlayer = 'O';
-          message.textContent = "Abir (O) thinking...";
+          message.textContent = "Ai (O) thinking...";
           disableBoard();
           setTimeout(() => {
             aiMove();
