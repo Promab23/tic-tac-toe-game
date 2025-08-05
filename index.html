@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Zone - Tic Tac Toe & Sudoku</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+  <h1><span class="emoji">🎮</span> Game Zone Developed by Proma Barua</h1>
+
+  <div class="game-row">
+  <div class="game-column">
+    <div class="game-selector">
+      <button onclick="toggleGame('tic-tac-toe')">▶️ Play Tic Tac Toe</button>
+      <button onclick="toggleRules('tic-tac-toe')">📘 Rules</button>
+    </div>
+    <div id="rules-tic-tac-toe" class="rules">
+      <h2>📜 Tic Tac Toe Rules</h2>
+      <ul id="tic-tac-toe-rule-list"></ul>
+    </div>
+    <div id="tic-tac-toe" class="game-container">
+      <div class="tic-tac-toe" id="ttt-board"></div>
+      <div class="message" id="ttt-message"></div>
+      <div class="ttt-controls">
+        <div class="difficulty-select">
+          <label for="difficulty">Difficulty: </label>
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+        <button id="ttt-reset">Reset Tic Tac Toe</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-column">
+    <div class="game-selector">
+      <button onclick="toggleGame('sudoku')">▶️ Play Sudoku</button>
+      <button onclick="toggleRules('sudoku')">📘 Rules</button>
+    </div>
+    <div id="rules-sudoku" class="rules">
+      <h2>📜 Sudoku Rules</h2>
+      <ul id="sudoku-rule-list"></ul>
+    </div>
+    <div id="sudoku" class="game-container">
+      <div class="sudoku" id="sudoku-board"></div>
+      <div class="message" id="sudoku-message"></div>
+      <button id="sudoku-reset">Reset Sudoku</button>
+    </div>
+  </div>
+</div>
+
+
+  <div id="sudoku" class="game-container">
+    <div class="sudoku" id="sudoku-board"></div>
+    <div class="message" id="sudoku-message"></div>
+    <button id="sudoku-reset" style="margin-top: 1rem;">Reset Sudoku</button>
+  </div>
+
+  <script src="game-logic.js"></script>
+</body>
+</html>
